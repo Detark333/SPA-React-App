@@ -1,0 +1,45 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+.container{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    max-width: 1600px;
+    min-width: 200px;
+    flex-wrap: wrap;
+}
+.span-main{
+    margin-right: 32px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+.span-select{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-right: 32px;
+}
+.span-select-blue{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0057FF;
+    margin-right: 32px;
+    cursor: pointer;
+}
+.span-select:hover{
+    cursor: pointer;
+}

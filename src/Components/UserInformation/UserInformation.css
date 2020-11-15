@@ -1,0 +1,12 @@
+.input{
+    background: white;
+    border-color: #BDBDBD;
+    max-width: 400px;
+    min-width: 100px;
+    border-top: #000000;
+    border-right: #000000;
+    border-left: #000000;
+}
+h3{
+    color: #BDBDBD;
+}

@@ -1,29 +1,59 @@
-import React from 'react';
-import {OrderContext} from "../../Context/OrderContext";
-import './UserInformation.css'
+import React from "react";
+import { OrderContext } from "СontextAs/OrderContext";
+import user from "./UserInformation.module.css";
 function UserInformation() {
-    return (
-        <OrderContext.Consumer>
-            {context =>
-                <>
-                    <h1>1 шаг из 3</h1>
-                    <h3>Фамилия</h3>
-                    <input className="input" type="text" value={context.userInformation.SecondName} onChange={(e => context.addUserSecondNameInformation(e.target.value))}/>
-                    <h3>Имя</h3>
-                    <input className="input" type="text" value={context.userInformation.Name} onChange={(e => context.addUserNameInformation(e.target.value))}/>
-                    <h3>Отчество</h3>
-                    <input className="input" type="text" value={context.userInformation.ThirdName} onChange={(e => context.addUserThirdNameInformation(e.target.value))}/>
-                    <h3>Серия паспорта</h3>
-                    <input className="input" type="text" value={context.userInformation.SeriesPassport} onChange={(e => context.addUserSeriesPassportInformation(e.target.value))}/>
-                    <h3>Номер</h3>
-                    <input className="input" type="text" value={context.userInformation.NumberPassport} onChange={(e => context.addUserNumberPassportInformation(e.target.value))}/>
-                    <h3>Дата выдачи</h3>
-                    <input className="input" type="text" value={context.userInformation.DateExtradition} onChange={(e => context.addUserDateExtraditionInformation(e.target.value))}/>
-                    <br/>
-                </>
-            }
-        </OrderContext.Consumer>
-    );
+  const formFields = [
+    {
+      name: "Фамилия",
+      fieldName: "secondName",
+      updateFunction: "addUserSecondNameInformation",
+    },
+    {
+      name: "Имя",
+      fieldName: "name",
+      updateFunction: "addUserNameInformation",
+    },
+    {
+      name: "Отчество",
+      fieldName: "thirdName",
+      updateFunction: "addUserThirdNameInformation",
+    },
+    {
+      name: "Серия паспорта",
+      fieldName: "seriesPassport",
+      updateFunction: "addUserSeriesPassportInformation",
+    },
+    {
+      name: "Номер",
+      fieldName: "numberPassport",
+      updateFunction: "addUserNumberPassportInformation",
+    },
+    {
+      name: "Дата выдачи",
+      fieldName: "dateExtradition",
+      updateFunction: "addUserDateExtraditionInformation",
+    },
+  ];
+  return (
+    <OrderContext.Consumer>
+      {(context) => (
+        <>
+          <h1>1 шаг из 3</h1>
+          {formFields.map(({ name, fieldName, updateFunction }) => (
+            <>
+              <h3 className={user.text}>{name}</h3>
+              <input
+                className={user.input}
+                type="text"
+                value={context.userInformation[fieldName]}
+                onChange={(e) => context[updateFunction](e.target.value)}
+              />
+            </>
+          ))}
+        </>
+      )}
+    </OrderContext.Consumer>
+  );
 }
 
 export default UserInformation;

@@ -1,0 +1,64 @@
+.orderSteps li {
+  display: inline-block;
+  padding: 0.3em 0.7em;
+  color: #b8b8b8;
+}
+.orderSteps #firstSecondLi:after {
+  color: #b8b8b8;
+  content: "\2192\A0";
+  margin-left: 0.6em;
+}
+.spanTextSelected {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-right: 32px;
+  cursor: pointer;
+}
+.spanText {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #bdbdbd;
+  margin-right: 32px;
+  cursor: pointer;
+}
+.containerDiv {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  max-width: 1600px;
+  min-width: 200px;
+  flex-wrap: wrap;
+}
+.divContainerInformationOrder {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  max-width: 1600px;
+  min-width: 200px;
+  margin: 24px auto;
+  padding: 32px;
+}
+.button {
+  margin-top: 24px;
+  background: #0057ff;
+  width: 197px;
+  height: 68px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.button:hover {
+  background: #007fff;
+  border: none;
+}

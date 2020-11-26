@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.visa {
+  background: url(http://www.psdgraphics.com/file/world-map-background.jpg)
+    no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 250px;
+  width: 400px;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-right: 2vw;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ccv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.year {
+  width: 30px;
+  margin-left: 10px;
+}
+.label {
+  margin-left: 10px;
+}

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 export const SumContext = React.createContext({
-    sumMassive: [],
-    addSumMassive: () => {},
-    delSumMassive: () => {},
-    changeItemSumMassive: () => {}
+  sumMassive: [],
+  addSumMassive: () => {},
+  delSumMassive: () => {},
+  changeItemSumMassive: () => {},
 });

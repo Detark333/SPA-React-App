@@ -1,0 +1,12 @@
+.input {
+  background: white;
+  border-color: #bdbdbd;
+  max-width: 400px;
+  min-width: 100px;
+  border-top: #000000;
+  border-right: #000000;
+  border-left: #000000;
+}
+.text {
+  color: #bdbdbd;
+}

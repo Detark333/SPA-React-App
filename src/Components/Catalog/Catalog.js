@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import catalog from "./Catalog.module.css";
-import Product from "./indexProduct";
+import Product from "./index";
 import { Context } from "СontextAs/Context";
 function Catalog() {
   const [upd, updMass] = useState(-1);

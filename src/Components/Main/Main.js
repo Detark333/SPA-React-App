@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Order from "./indexOrder";
-import Catalog from "./indexCatalog";
-import Cart from "./indexCart";
+import { Cart, Order, Catalog } from "./index";
 import { Context } from "СontextAs/Context";
 import { SumContext } from "СontextAs/SumContext";
 import { OrderContext } from "СontextAs/OrderContext";
@@ -173,7 +171,7 @@ class Main extends React.Component {
                 },
                 addAdressInformation: (marker) => {
                   this.setState({
-                    adressInformation: marker
+                    adressInformation: marker,
                   });
                 },
               }}

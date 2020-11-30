@@ -1,6 +1,6 @@
 import React from "react";
 import cart from "./Cart.module.css";
-import CartComponent from "./indexCartComponent";
+import CartComponent from "./index";
 import { SumContext } from "СontextAs/SumContext";
 import { Link } from "react-router-dom";
 function Cart() {

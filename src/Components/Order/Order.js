@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import order from "./Order.module.css";
-import BankCard from "./indexBankCard";
-import UserInformation from "./indexUser";
-import Map from "./indexMap";
-import CompleteOrder from "./indexCompleteOrder";
+import { BankCard, UserInformation, Map, CompleteOrder } from "./index";
 import SvgArrow from "./SvgArrow";
 function Order() {
   const [openLayout, setLayout] = useState(0);

@@ -5,7 +5,7 @@ export const OrderContext = React.createContext({
   adressInformation: {},
   addCardNameInformation: () => {},
   addCardNumberInformation: () => {},
-  addCardCVVInformation: () => {},
+  addCardCvvInformation: () => {},
   addCardMonthInformation: () => {},
   addCardDayInformation: () => {},
   addUserNameInformation: () => {},

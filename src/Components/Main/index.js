@@ -1,4 +1,3 @@
-import Cart from "Container/Cart/Cart";
-import Catalog from "Container/Catalog/Catalog";
-import Order from "Container/Order/Order";
-export { Cart, Catalog, Order };
+import Main from "./Main";
+
+export default Main;

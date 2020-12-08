@@ -1,3 +1,3 @@
-import CartComponent from "Container/CarComponent/CartComponent";
+import Cart from "./Cart";
 
-export default CartComponent;
+export default Cart;

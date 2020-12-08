@@ -1,3 +1,3 @@
-import Product from "Container/Product/Product";
+import Catalog from "./Catalog";
 
-export default Product;
+export default Catalog;

@@ -1,54 +1,24 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { Cart, Order, Catalog } from "./index";
+import Cart from "Container/Cart";
+import Order from "Container/Order";
+import Catalog from "Container/Catalog";
 import { Context } from "СontextAs/Context";
 import { SumContext } from "СontextAs/SumContext";
 import { OrderContext } from "СontextAs/OrderContext";
-const SECTIONS = [
-  { id: 0, title: "Ручка", price: 100 },
-  { id: 1, title: "Пенал", price: 55 },
-  { id: 2, title: "Стикер", price: 65 },
-  { id: 3, title: "Ножницы", price: 73 },
-  { id: 4, title: "Отвертка", price: 1000 },
-  { id: 5, title: "Карандаш", price: 44 },
-  { id: 6, title: "Товар", price: 500 },
-  { id: 7, title: "Товар", price: 350 },
-  { id: 8, title: "Товар", price: 200 },
-  { id: 9, title: "Товар", price: 700 },
-  { id: 10, title: "Товар", price: 600 },
-  { id: 11, title: "Товар", price: 800 },
-  { id: 12, title: "Товар Товар Товар", price: 900 },
-  { id: 13, title: "Товар", price: 555 },
-  { id: 14, title: "Товар", price: 666 },
-  { id: 15, title: "Товар", price: 666 },
-  { id: 16, title: "Товар", price: 999 },
-  { id: 17, title: "Товар", price: 444 },
-  { id: 18, title: "Товар", price: 333 },
-  { id: 19, title: "Товар", price: 222 },
-  { id: 20, title: "Товар", price: 123 },
-  { id: 21, title: "Товар", price: 456 },
-  { id: 22, title: "Товар", price: 789 },
-  { id: 23, title: "Товар", price: 987 },
-  { id: 24, title: "Товар", price: 645 },
-  { id: 25, title: "Товар", price: 312 },
-  { id: 26, title: "Товар", price: 852 },
-  { id: 27, title: "Товар", price: 258 },
-  { id: 28, title: "Товар", price: 147 },
-  { id: 29, title: "Товар", price: 369 },
-  { id: 30, title: "Товар", price: 653 },
-];
+import SECTIONS from "./Section";
 
 class Main extends React.Component {
   state = {
     massiveCart: [],
-    Sections: SECTIONS,
+    sections: SECTIONS,
     sum: [],
     card: {
       cardName: "xxxxx xxx",
       cardNumber: "0000000000000000",
       cardMonth: "xx",
       cardDay: "xx",
-      cardCCV: "CCV",
+      cardCvv: "CVV",
     },
     userInformation: {
       secondName: "",
@@ -70,7 +40,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <Context.Provider value={this.state.Sections}>
+        <Context.Provider value={this.state.sections}>
           <SumContext.Provider
             value={{
               sumMassive: this.state.sum,
@@ -122,8 +92,8 @@ class Main extends React.Component {
                 addCardNumberInformation: (number) => {
                   this.changeOrderInformation(number, "cardNumber", "card");
                 },
-                addCardCVVInformation: (cvv) => {
-                  this.changeOrderInformation(cvv, "cardCCV", "card");
+                addCardCvvInformation: (ccv) => {
+                  this.changeOrderInformation(ccv, "cardCvv", "card");
                 },
                 addCardMonthInformation: (month) => {
                   this.changeOrderInformation(month, "cardMonth", "card");

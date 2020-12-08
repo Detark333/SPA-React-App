@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import bank from "./BankCard.module.css";
 import { OrderContext } from "СontextAs/OrderContext";
 function BankCard() {
+  const context = useContext(OrderContext);
+  const {
+    card: { cardNumber, cardCvv, cardName, cardMonth, cardDay },
+  } = context;
   return (
     <OrderContext.Consumer>
       {(context) => (
@@ -15,21 +19,21 @@ function BankCard() {
                 </div>
               </div>
               <div className={bank.ccv}>
-                <span>{context.card.cardNumber}</span>
-                <span>{context.card.cardCCV}</span>
+                <span>{cardNumber}</span>
+                <span>{cardCvv}</span>
               </div>
               <div className={bank.date}>
                 <div>
                   <label>
                     Card Holder
-                    <p>{context.card.cardName}</p>
+                    <p>{cardName}</p>
                   </label>
                 </div>
                 <div>
                   <label>
                     Expires
                     <p>
-                      {context.card.cardMonth} / {context.card.cardDay}
+                      {cardMonth} / {cardDay}
                     </p>
                   </label>
                 </div>
@@ -83,7 +87,7 @@ function BankCard() {
                   type="text"
                   maxLength="3"
                   onChange={(e) =>
-                    context.addCardCVVInformation(e.target.value)
+                    context.addCardCvvInformation(e.target.value)
                   }
                 />
               </label>

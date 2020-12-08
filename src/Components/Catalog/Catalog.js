@@ -1,33 +1,24 @@
 import React, { useState, useContext } from "react";
 import catalog from "./Catalog.module.css";
-import Product from "./index";
+import Product from "Container/Product";
 import { Context } from "СontextAs/Context";
 function Catalog() {
   const [upd, updMass] = useState(-1);
   const value = useContext(Context);
-  let massiveUpd;
+  let massiveUpd; //переменная let здесь необхоима
   const mass = value;
   if (upd === 1) {
-    //пузырек
-    for (let i = 1; i < mass.length; ++i) {
-      for (let r = 0; r < mass.length - i; r++) {
-        if (mass[r].price < mass[r + 1].price) {
-          let temp = mass[r];
-          mass[r] = mass[r + 1];
-          mass[r + 1] = temp;
-        }
-      }
-    }
+    mass.sort((a, b) => b.price - a.price);
   }
   if (upd === 0) {
     mass.sort((a, b) => a.price - b.price);
   }
   if (upd === 2) {
     mass.sort(function (a, b) {
-      let aname = a.title.toLowerCase(),
-        bname = b.title.toLowerCase();
-      if (aname < bname) return -1;
-      if (aname > bname) return 1;
+      const aName = a.title.toLowerCase(),
+        bName = b.title.toLowerCase();
+      if (aName < bName) return -1;
+      if (aName > bName) return 1;
       return 0;
     });
   }

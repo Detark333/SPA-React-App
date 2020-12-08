@@ -1,44 +1,46 @@
 import React, { useState } from "react";
-import cart from "./CartComponent.module.css";
-import SvgCart from "./SvgCart";
+import cartComponent from "./CartComponent.module.css";
+import cart from "./cart.svg";
 function CartComponent(props) {
   const [valueInput, setValueInput] = useState(props.valueNumberInput);
   const [multiCount, setMultiCount] = useState(props.valueNumberInput);
   const sumPrice = props.price * multiCount;
-  const InputHandler = (event) => {
+  const inputHandler = (event) => {
     if (event.target.value.length > 0 || event.target.value > 0) {
       setMultiCount(event.target.value);
     }
-    props.ChangeItemSumMassive(props.id);
+    props.changeItemSumMassive(props.id);
     setValueInput(event.target.value);
-    props.ChangeItemSumMassive(
+    props.changeItemSumMassive(
       props.id,
       props.price * event.target.value,
       event.target.value
     );
   };
   return (
-    <div className={cart.container}>
-      <div className={cart.inf}>
-        <div className={cart.items}>{props.name}</div>
-        <div className={cart.items} style={{ width: "50px" }}>
+    <div className={cartComponent.container}>
+      <div className={cartComponent.inf}>
+        <div className={cartComponent.items}>{props.name}</div>
+        <div className={cartComponent.items} style={{ width: "50px" }}>
           {sumPrice}₽
         </div>
         <input
-          className={cart.count}
+          className={cartComponent.count}
           width="15"
           type="number"
           min="1"
           value={valueInput}
           required
           placeholder="Введите количество"
-          onChange={InputHandler}
+          onChange={inputHandler}
         />
       </div>
-      <SvgCart
-        style={cart.svg}
-        DeleteCartProductHandler={props.DeleteCartProductHandler}
-      />
+      <div
+        className={cartComponent.svg}
+        onClick={props.deleteCartProductHandler}
+      >
+        <img src={cart} alt="cart" />
+      </div>
     </div>
   );
 }

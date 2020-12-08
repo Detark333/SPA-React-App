@@ -1,11 +1,11 @@
 import React from "react";
 import cart from "./Cart.module.css";
-import CartComponent from "./index";
+import CartComponent from "Container/CartComponent";
 import { SumContext } from "СontextAs/SumContext";
 import { Link } from "react-router-dom";
 function Cart() {
-  const SumHandler = (mass) => {
-    let sum = 0;
+  const sumHandler = (mass) => {
+    let sum = 0; // переменная let здесь необходима
     mass.forEach((item) => {
       sum += item.priceCart;
     });
@@ -25,10 +25,10 @@ function Cart() {
                 price={product.price}
                 valueNumberInput={product.count}
                 id={product.id}
-                DeleteCartProductHandler={() => {
+                deleteCartProductHandler={() => {
                   sumContext.delSumMassive(product.id);
                 }}
-                ChangeItemSumMassive={(id, price, count) => {
+                changeItemSumMassive={(id, price, count) => {
                   sumContext.changeItemSumMassive(id, price, count);
                 }}
               />
@@ -39,7 +39,7 @@ function Cart() {
             <div>Нет данных</div>
           ) : (
             <div>
-              <div>Итог: {SumHandler(sumContext.sumMassive)}</div>
+              <div>Итог: {sumHandler(sumContext.sumMassive)}</div>
               <div>
                 <Link className={cart.route} to="/order">
                   Оплата

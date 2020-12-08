@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import order from "./Order.module.css";
-import { BankCard, UserInformation, Map, CompleteOrder } from "./index";
-import SvgArrow from "./SvgArrow";
+import BankCard from "Container/BankCard";
+import UserInformation from "Container/UserInformation";
+import Map from "Container/Map";
+import CompleteOrder from "Container/CompleteOrder";
+import arrow from "./arrow.svg";
 function Order() {
   const [openLayout, setLayout] = useState(0);
   const updateLayoutHandler = (index) => {
@@ -21,9 +24,17 @@ function Order() {
     <div>
       <div className={order.containerDiv}>
         {divMain("О покупателе", 0)}
-        <SvgArrow />
+        <img
+          src={arrow}
+          style={{ marginTop: "8px", marginRight: "32px" }}
+          alt="arrow"
+        />
         {divMain("Банковская карта", 1)}
-        <SvgArrow />
+        <img
+          src={arrow}
+          style={{ marginTop: "8px", marginRight: "32px" }}
+          alt="arrow"
+        />
         {divMain("Адрес", 2)}
       </div>
 

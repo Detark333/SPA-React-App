@@ -1,7 +1,7 @@
 import React from "react";
 import header from "./Header.module.css";
 import { Link } from "react-router-dom";
-import Burger from "./Burger";
+import burger from "./burger.svg";
 function Header() {
   return (
     <header className={header.header}>
@@ -20,7 +20,7 @@ function Header() {
               </Link>
             </li>
             <li className={header.li}>
-              <Burger />
+              <img src={burger} alt="burger" />
             </li>
           </ul>
         </div>

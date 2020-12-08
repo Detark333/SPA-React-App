@@ -1,39 +1,39 @@
 import React from "react";
 import { OrderContext } from "СontextAs/OrderContext";
 import user from "./UserInformation.module.css";
+const formFields = [
+  {
+    name: "Фамилия",
+    fieldName: "secondName",
+    updateFunction: "addUserSecondNameInformation",
+  },
+  {
+    name: "Имя",
+    fieldName: "name",
+    updateFunction: "addUserNameInformation",
+  },
+  {
+    name: "Отчество",
+    fieldName: "thirdName",
+    updateFunction: "addUserThirdNameInformation",
+  },
+  {
+    name: "Серия паспорта",
+    fieldName: "seriesPassport",
+    updateFunction: "addUserSeriesPassportInformation",
+  },
+  {
+    name: "Номер",
+    fieldName: "numberPassport",
+    updateFunction: "addUserNumberPassportInformation",
+  },
+  {
+    name: "Дата выдачи",
+    fieldName: "dateExtradition",
+    updateFunction: "addUserDateExtraditionInformation",
+  },
+];
 function UserInformation() {
-  const formFields = [
-    {
-      name: "Фамилия",
-      fieldName: "secondName",
-      updateFunction: "addUserSecondNameInformation",
-    },
-    {
-      name: "Имя",
-      fieldName: "name",
-      updateFunction: "addUserNameInformation",
-    },
-    {
-      name: "Отчество",
-      fieldName: "thirdName",
-      updateFunction: "addUserThirdNameInformation",
-    },
-    {
-      name: "Серия паспорта",
-      fieldName: "seriesPassport",
-      updateFunction: "addUserSeriesPassportInformation",
-    },
-    {
-      name: "Номер",
-      fieldName: "numberPassport",
-      updateFunction: "addUserNumberPassportInformation",
-    },
-    {
-      name: "Дата выдачи",
-      fieldName: "dateExtradition",
-      updateFunction: "addUserDateExtraditionInformation",
-    },
-  ];
   return (
     <OrderContext.Consumer>
       {(context) => (

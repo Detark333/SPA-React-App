@@ -5,7 +5,7 @@ import { Context } from "СontextAs/Context";
 function Catalog() {
   const [upd, updMass] = useState(-1);
   const value = useContext(Context);
-  let massiveUpd; //переменная let здесь необхоима
+  let product; //переменная let здесь необхоима
   const mass = value;
   if (upd === 1) {
     mass.sort((a, b) => b.price - a.price);
@@ -22,11 +22,11 @@ function Catalog() {
       return 0;
     });
   }
-  massiveUpd = mass.map((section) => {
+  product = mass.map((section) => {
     return <Product key={section.id} section={section} index={section.id} />;
   });
   if (upd === 3) {
-    massiveUpd = mass.map((section) => {
+    product = mass.map((section) => {
       if (section.price < 101) {
         return (
           <Product key={section.id} section={section} index={section.id} />
@@ -55,7 +55,7 @@ function Catalog() {
         {divElement("названию", 2)}
         {divElement("цене меньше 100", 3)}
       </div>
-      <div className={catalog.flexContainer}>{massiveUpd}</div>
+      <div className={catalog.flexContainer}>{product}</div>
     </div>
   );
 }

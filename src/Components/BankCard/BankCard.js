@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import bank from "./BankCard.module.css";
 import { OrderContext } from "СontextAs/OrderContext";
+import {CARD_NAME, CARD_NUMBER, CARD_MONTH, CARD_DAY, CARD_CVV, CARD} from "@/Constants";
 function BankCard() {
   const context = useContext(OrderContext);
   const {
@@ -46,7 +47,7 @@ function BankCard() {
                   className={bank.label}
                   type="text"
                   onChange={(e) =>
-                    context.addCardNameInformation(e.target.value)
+                    context.addCardInformation(e.target.value, CARD_NAME, CARD)
                   }
                 />
               </label>
@@ -57,7 +58,7 @@ function BankCard() {
                   type="text"
                   maxLength="16"
                   onChange={(e) =>
-                    context.addCardNumberInformation(e.target.value)
+                    context.addCardInformation(e.target.value, CARD_NUMBER, CARD)
                   }
                 />
               </label>
@@ -68,7 +69,7 @@ function BankCard() {
                   type="text"
                   maxLength="2"
                   onChange={(e) =>
-                    context.addCardMonthInformation(e.target.value)
+                    context.addCardInformation(e.target.value, CARD_MONTH, CARD)
                   }
                 />
                 <input
@@ -76,7 +77,7 @@ function BankCard() {
                   type="text"
                   maxLength="2"
                   onChange={(e) =>
-                    context.addCardDayInformation(e.target.value)
+                    context.addCardInformation(e.target.value, CARD_DAY, CARD)
                   }
                 />
               </div>
@@ -87,7 +88,7 @@ function BankCard() {
                   type="text"
                   maxLength="3"
                   onChange={(e) =>
-                    context.addCardCvvInformation(e.target.value)
+                    context.addCardInformation(e.target.value, CARD_CVV, CARD)
                   }
                 />
               </label>

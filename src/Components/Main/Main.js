@@ -30,8 +30,8 @@ class Main extends React.Component {
     },
     adressInformation: {},
   };
-  changeOrderInformation = (nameChange, nameState, card) => {
-    const massive = this.state[card];
+  changeOrderInformation = (nameChange, nameState, classField) => {
+    const massive = this.state[classField];
     massive[nameState] = nameChange;
     this.setState({
       massive,
@@ -86,62 +86,12 @@ class Main extends React.Component {
               value={{
                 card: this.state.card,
                 userInformation: this.state.userInformation,
-                addCardNameInformation: (name) => {
-                  this.changeOrderInformation(name, "cardName", "card");
-                },
-                addCardNumberInformation: (number) => {
-                  this.changeOrderInformation(number, "cardNumber", "card");
-                },
-                addCardCvvInformation: (ccv) => {
-                  this.changeOrderInformation(ccv, "cardCvv", "card");
-                },
-                addCardMonthInformation: (month) => {
-                  this.changeOrderInformation(month, "cardMonth", "card");
-                },
-                addCardDayInformation: (day) => {
-                  this.changeOrderInformation(day, "cardDay", "card");
-                },
-                addUserNameInformation: (name) => {
-                  this.changeOrderInformation(name, "name", "userInformation");
-                },
-                addUserSecondNameInformation: (secondName) => {
-                  this.changeOrderInformation(
-                    secondName,
-                    "secondName",
-                    "userInformation"
-                  );
-                },
-                addUserThirdNameInformation: (thirdName) => {
-                  this.changeOrderInformation(
-                    thirdName,
-                    "thirdName",
-                    "userInformation"
-                  );
-                },
-                addUserSeriesPassportInformation: (series) => {
-                  this.changeOrderInformation(
-                    series,
-                    "seriesPassport",
-                    "userInformation"
-                  );
-                },
-                addUserNumberPassportInformation: (number) => {
-                  this.changeOrderInformation(
-                    number,
-                    "numberPassport",
-                    "userInformation"
-                  );
-                },
-                addUserDateExtraditionInformation: (date) => {
-                  this.changeOrderInformation(
-                    date,
-                    "dateExtradition",
-                    "userInformation"
-                  );
+                addCardInformation: (name, nameMethod, nameState) => {
+                  this.changeOrderInformation(name, nameMethod, nameState);
                 },
                 addAdressInformation: (marker) => {
                   this.setState({
-                    adressInformation: marker,
+                    adressInformation: marker
                   });
                 },
               }}

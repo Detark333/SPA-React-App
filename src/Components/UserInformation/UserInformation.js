@@ -1,36 +1,31 @@
 import React from "react";
 import { OrderContext } from "СontextAs/OrderContext";
+import {USER_INFORMATION, SECOND_NAME, NAME, THIRD_NAME, SERIES_PASSPORT, NUMBER_PASSPORT, DATE_EXTRADITION} from "@/Constants";
 import user from "./UserInformation.module.css";
 const formFields = [
   {
     name: "Фамилия",
-    fieldName: "secondName",
-    updateFunction: "addUserSecondNameInformation",
+    fieldName: SECOND_NAME
   },
   {
     name: "Имя",
-    fieldName: "name",
-    updateFunction: "addUserNameInformation",
+    fieldName: NAME
   },
   {
     name: "Отчество",
-    fieldName: "thirdName",
-    updateFunction: "addUserThirdNameInformation",
+    fieldName: THIRD_NAME
   },
   {
     name: "Серия паспорта",
-    fieldName: "seriesPassport",
-    updateFunction: "addUserSeriesPassportInformation",
+    fieldName: SERIES_PASSPORT
   },
   {
     name: "Номер",
-    fieldName: "numberPassport",
-    updateFunction: "addUserNumberPassportInformation",
+    fieldName: NUMBER_PASSPORT
   },
   {
     name: "Дата выдачи",
-    fieldName: "dateExtradition",
-    updateFunction: "addUserDateExtraditionInformation",
+    fieldName: DATE_EXTRADITION
   },
 ];
 function UserInformation() {
@@ -39,14 +34,14 @@ function UserInformation() {
       {(context) => (
         <>
           <h1>1 шаг из 3</h1>
-          {formFields.map(({ name, fieldName, updateFunction }) => (
+          {formFields.map(({ name, fieldName }) => (
             <>
               <h3 className={user.text}>{name}</h3>
               <input
                 className={user.input}
                 type="text"
                 value={context.userInformation[fieldName]}
-                onChange={(e) => context[updateFunction](e.target.value)}
+                onChange={(e) => context.addCardInformation(e.target.value, fieldName, USER_INFORMATION)}
               />
             </>
           ))}

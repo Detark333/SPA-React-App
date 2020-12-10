@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cartComponent from "./CartComponent.module.css";
-import cart from "./cart.svg";
+import cart from "SvgPicture/cart.svg";
 function CartComponent(props) {
   const [valueInput, setValueInput] = useState(props.valueNumberInput);
   const [multiCount, setMultiCount] = useState(props.valueNumberInput);

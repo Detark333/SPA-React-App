@@ -4,7 +4,7 @@ import BankCard from "Container/BankCard";
 import UserInformation from "Container/UserInformation";
 import Map from "Container/Map";
 import CompleteOrder from "Container/CompleteOrder";
-import arrow from "./arrow.svg";
+import arrow from "SvgPicture/arrow.svg";
 function Order() {
   const [openLayout, setLayout] = useState(0);
   const updateLayoutHandler = (index) => {

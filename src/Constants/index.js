@@ -1,0 +1,18 @@
+import {CARD_NAME, CARD_NUMBER, CARD_MONTH, CARD_DAY, CARD_CVV} from "./NameCardMethods";
+import {CARD, USER_INFORMATION} from "./NameStateField";
+import {SECOND_NAME, NAME, THIRD_NAME, SERIES_PASSPORT, NUMBER_PASSPORT, DATE_EXTRADITION} from "./NameUserInformationMethods"
+export {
+    CARD_NAME,
+    CARD_NUMBER,
+    CARD_MONTH,
+    CARD_DAY,
+    CARD_CVV,
+    CARD,
+    USER_INFORMATION,
+    SECOND_NAME,
+    NAME,
+    THIRD_NAME,
+    SERIES_PASSPORT,
+    NUMBER_PASSPORT,
+    DATE_EXTRADITION
+}

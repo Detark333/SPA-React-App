@@ -5,11 +5,31 @@ import UserInformation from "Container/UserInformation";
 import Map from "Container/Map";
 import CompleteOrder from "Container/CompleteOrder";
 import arrow from "SvgPicture/arrow.svg";
+const components = [
+  {
+    component: <UserInformation />,
+    countButtons: 1,
+    setForm: 1,
+    nameFirstButton: "Продолжить",
+  },
+  {
+    component: <BankCard />,
+    countButtons: 2,
+    setForm: 2,
+    nameFirstButton: "Вернуться назад",
+    nameSecondButton: "Продолжить",
+  },
+  {
+    component: <Map />,
+    countButtons: 2,
+    setForm: 3,
+    nameFirstButton: "Вернуться назад",
+    nameSecondButton: "Заказать",
+  },
+  { component: <CompleteOrder />, setForm: 4, countButtons: 0 },
+];
 function Order() {
   const [openLayout, setLayout] = useState(0);
-  const updateLayoutHandler = (index) => {
-    setLayout(index);
-  };
   const divMain = (name, count) => (
     <div
       className={openLayout === count ? order.spanTextSelected : order.spanText}
@@ -20,6 +40,38 @@ function Order() {
       {name}
     </div>
   );
+  const divLayout = (number) => {
+    return (
+      <div className={order.divContainerInformationOrder}>
+        {components[number].component}
+        {components[number].countButtons === 0 ? null : components[number]
+            .countButtons === 1 ? (
+          <button
+            className={order.button}
+            onClick={() => setLayout(components[number].setForm)}
+          >
+            {components[number].nameFirstButton}
+          </button>
+        ) : (
+          <>
+            {" "}
+            <button
+              className={order.button}
+              onClick={() => setLayout(components[number].setForm - 2)}
+            >
+              {components[number].nameFirstButton}
+            </button>
+            <button
+              className={order.button}
+              onClick={() => setLayout(components[number].setForm)}
+            >
+              {components[number].nameSecondButton}
+            </button>{" "}
+          </>
+        )}
+      </div>
+    );
+  };
   return (
     <div>
       <div className={order.containerDiv}>
@@ -37,58 +89,7 @@ function Order() {
         />
         {divMain("Адрес", 2)}
       </div>
-
-      {openLayout === 0 ? (
-        <div className={order.divContainerInformationOrder}>
-          <UserInformation />
-          <button
-            className={order.button}
-            onClick={() => updateLayoutHandler(1)}
-          >
-            Продолжить
-          </button>
-        </div>
-      ) : null}
-      {openLayout === 1 ? (
-        <div className={order.divContainerInformationOrder}>
-          <BankCard />
-          <button
-            className={order.button}
-            onClick={() => updateLayoutHandler(0)}
-          >
-            Вернуться назад
-          </button>
-          <button
-            className={order.button}
-            onClick={() => updateLayoutHandler(2)}
-          >
-            Продолжить
-          </button>
-        </div>
-      ) : null}
-      {openLayout === 2 ? (
-        <div className={order.divContainerInformationOrder}>
-          <Map />
-          <br />
-          <button
-            className={order.button}
-            onClick={() => updateLayoutHandler(1)}
-          >
-            Вернуться назад
-          </button>
-          <button
-            className={order.button}
-            onClick={() => updateLayoutHandler(3)}
-          >
-            Заказать
-          </button>
-        </div>
-      ) : null}
-      {openLayout === 3 ? (
-        <div className={order.divContainerInformationOrder}>
-          <CompleteOrder />
-        </div>
-      ) : null}
+      {divLayout(openLayout)}
     </div>
   );
 }

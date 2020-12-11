@@ -4,5 +4,5 @@ export const OrderContext = React.createContext({
   userInformation: {},
   adressInformation: {},
   addCardInformation: () => {},
-  addAdressInformation: () => {}
+  addAdressInformation: () => {},
 });

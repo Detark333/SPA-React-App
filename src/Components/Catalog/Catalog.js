@@ -2,18 +2,20 @@ import React, { useState, useContext } from "react";
 import catalog from "./Catalog.module.css";
 import Product from "Container/Product";
 import { Context } from "СontextAs/Context";
-function Catalog() {
-  const [upd, updMass] = useState(-1);
-  const value = useContext(Context);
-  let product; //переменная let здесь необхоима
-  const mass = value;
-  if (upd === 1) {
+
+const FIRST_SORT_MASSIVE = "возрастанию цены";
+const SECOND_SORT_MASSIVE = "возрастанию цены";
+const THIRD_SORT_MASSIVE = "возрастанию цены";
+const FOURTH_SORT_MASSIVE = "возрастанию цены";
+
+const getProducts = (chosenMassive, mass) => {
+  if (chosenMassive === 1) {
     mass.sort((a, b) => b.price - a.price);
   }
-  if (upd === 0) {
+  if (chosenMassive === 0) {
     mass.sort((a, b) => a.price - b.price);
   }
-  if (upd === 2) {
+  if (chosenMassive === 2) {
     mass.sort(function (a, b) {
       const aName = a.title.toLowerCase(),
         bName = b.title.toLowerCase();
@@ -22,11 +24,8 @@ function Catalog() {
       return 0;
     });
   }
-  product = mass.map((section) => {
-    return <Product key={section.id} section={section} index={section.id} />;
-  });
-  if (upd === 3) {
-    product = mass.map((section) => {
+  if (chosenMassive === 3) {
+    return mass.map((section) => {
       if (section.price < 101) {
         return (
           <Product key={section.id} section={section} index={section.id} />
@@ -35,12 +34,23 @@ function Catalog() {
         return null;
       }
     });
+  } else {
+    return mass.map((section) => {
+      return <Product key={section.id} section={section} index={section.id} />;
+    });
   }
+};
+
+function Catalog() {
+  const [chosenSortMassive, setSortMass] = useState(-1);
+  const valueMainMassive = useContext(Context);
   const divElement = (name, count) => (
     <div
-      className={upd === count ? catalog.spanSelectBlue : catalog.spanSelect}
+      className={
+        chosenSortMassive === count ? catalog.spanSelectBlue : catalog.spanSelect
+      }
       onClick={() => {
-        updMass(count);
+        setSortMass(count);
       }}
     >
       {name}
@@ -50,12 +60,14 @@ function Catalog() {
     <div>
       <div className={catalog.container}>
         <div className={catalog.spanMain}>Сортировать по:</div>
-        {divElement("возрастанию цены", 0)}
-        {divElement("убыванию цены", 1)}
-        {divElement("названию", 2)}
-        {divElement("цене меньше 100", 3)}
+        {divElement(FIRST_SORT_MASSIVE, 0)}
+        {divElement(SECOND_SORT_MASSIVE, 1)}
+        {divElement(THIRD_SORT_MASSIVE, 2)}
+        {divElement(FOURTH_SORT_MASSIVE, 3)}
       </div>
-      <div className={catalog.flexContainer}>{product}</div>
+      <div className={catalog.flexContainer}>
+        {getProducts(chosenSortMassive, valueMainMassive)}
+      </div>
     </div>
   );
 }

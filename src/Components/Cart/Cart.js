@@ -5,11 +5,9 @@ import { SumContext } from "СontextAs/SumContext";
 import { Link } from "react-router-dom";
 function Cart() {
   const sumHandler = (mass) => {
-    let sum = 0; // переменная let здесь необходима
-    mass.forEach((item) => {
-      sum += item.priceCart;
-    });
-    return sum;
+    return mass.reduce(function (sum, current) {
+      return sum + current.priceCart;
+    }, 0);
   };
   return (
     <SumContext.Consumer>

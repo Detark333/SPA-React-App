@@ -6,7 +6,7 @@ import Catalog from "Container/Catalog";
 import { Context } from "СontextAs/Context";
 import { SumContext } from "СontextAs/SumContext";
 import { OrderContext } from "СontextAs/OrderContext";
-import SECTIONS from "./Section";
+import {SECTIONS} from "@/Constants";
 
 class Main extends React.Component {
   state = {
@@ -91,7 +91,7 @@ class Main extends React.Component {
                 },
                 addAdressInformation: (marker) => {
                   this.setState({
-                    adressInformation: marker
+                    adressInformation: marker,
                   });
                 },
               }}

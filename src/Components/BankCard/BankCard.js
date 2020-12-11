@@ -1,7 +1,14 @@
 import React, { useContext } from "react";
 import bank from "./BankCard.module.css";
 import { OrderContext } from "СontextAs/OrderContext";
-import {CARD_NAME, CARD_NUMBER, CARD_MONTH, CARD_DAY, CARD_CVV, CARD} from "@/Constants";
+import {
+  CARD_NAME,
+  CARD_NUMBER,
+  CARD_MONTH,
+  CARD_DAY,
+  CARD_CVV,
+  CARD,
+} from "@/Constants";
 function BankCard() {
   const context = useContext(OrderContext);
   const {
@@ -58,7 +65,11 @@ function BankCard() {
                   type="text"
                   maxLength="16"
                   onChange={(e) =>
-                    context.addCardInformation(e.target.value, CARD_NUMBER, CARD)
+                    context.addCardInformation(
+                      e.target.value,
+                      CARD_NUMBER,
+                      CARD
+                    )
                   }
                 />
               </label>

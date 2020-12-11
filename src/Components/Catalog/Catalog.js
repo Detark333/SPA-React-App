@@ -47,7 +47,9 @@ function Catalog() {
   const divElement = (name, count) => (
     <div
       className={
-        chosenSortMassive === count ? catalog.spanSelectBlue : catalog.spanSelect
+        chosenSortMassive === count
+          ? catalog.spanSelectBlue
+          : catalog.spanSelect
       }
       onClick={() => {
         setSortMass(count);

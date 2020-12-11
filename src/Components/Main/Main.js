@@ -6,7 +6,7 @@ import Catalog from "Container/Catalog";
 import { Context } from "СontextAs/Context";
 import { SumContext } from "СontextAs/SumContext";
 import { OrderContext } from "СontextAs/OrderContext";
-import {SECTIONS} from "@/Constants";
+import { SECTIONS } from "@/Constants";
 
 class Main extends React.Component {
   state = {

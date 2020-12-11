@@ -86,9 +86,7 @@ class Main extends React.Component {
               value={{
                 card: this.state.card,
                 userInformation: this.state.userInformation,
-                addCardInformation: (name, nameMethod, nameState) => {
-                  this.changeOrderInformation(name, nameMethod, nameState);
-                },
+                addCardInformation: this.changeOrderInformation,
                 addAdressInformation: (marker) => {
                   this.setState({
                     adressInformation: marker,

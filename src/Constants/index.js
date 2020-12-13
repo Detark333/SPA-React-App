@@ -1,12 +1,12 @@
-import {
+export {
   CARD_NAME,
   CARD_NUMBER,
   CARD_MONTH,
   CARD_DAY,
   CARD_CVV,
 } from "./NameCardMethods";
-import { CARD, USER_INFORMATION } from "./NameStateField";
-import {
+export { CARD, USER_INFORMATION } from "./NameStateField";
+export {
   SECOND_NAME,
   NAME,
   THIRD_NAME,
@@ -14,20 +14,4 @@ import {
   NUMBER_PASSPORT,
   DATE_EXTRADITION,
 } from "./NameUserInformationMethods";
-import SECTIONS from "./Section";
-export {
-  CARD_NAME,
-  CARD_NUMBER,
-  CARD_MONTH,
-  CARD_DAY,
-  CARD_CVV,
-  CARD,
-  USER_INFORMATION,
-  SECOND_NAME,
-  NAME,
-  THIRD_NAME,
-  SERIES_PASSPORT,
-  NUMBER_PASSPORT,
-  DATE_EXTRADITION,
-  SECTIONS,
-};
+export { SECTIONS } from "./Section";

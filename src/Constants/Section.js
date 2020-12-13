@@ -32,4 +32,4 @@ const SECTIONS = [
   { id: 30, title: "Товар", price: 653 },
 ];
 
-export default SECTIONS;
+export { SECTIONS };

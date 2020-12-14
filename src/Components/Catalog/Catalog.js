@@ -4,9 +4,9 @@ import Product from "Container/Product";
 import { Context } from "СontextAs/Context";
 
 const FIRST_SORT_MASSIVE = "возрастанию цены";
-const SECOND_SORT_MASSIVE = "возрастанию цены";
-const THIRD_SORT_MASSIVE = "возрастанию цены";
-const FOURTH_SORT_MASSIVE = "возрастанию цены";
+const SECOND_SORT_MASSIVE = "убываню цены";
+const THIRD_SORT_MASSIVE = "алфавиту";
+const FOURTH_SORT_MASSIVE = "цене меньше 100";
 
 const getProducts = (chosenMassive, mass) => {
   if (chosenMassive === 1) {

@@ -5,6 +5,7 @@ import UserInformation from "Container/UserInformation";
 import Map from "Container/Map";
 import CompleteOrder from "Container/CompleteOrder";
 import arrow from "SvgPicture/arrow.svg";
+import swal from '@sweetalert/with-react'
 const components = [
   {
     component: <UserInformation />,
@@ -41,6 +42,9 @@ function Order() {
     </div>
   );
   const divLayout = (number) => {
+    if(number === 3){
+      swal("Спасибо!", "Вы оставили заявку!", "success");
+    }
     return (
       <div className={order.divContainerInformationOrder}>
         {components[number].component}

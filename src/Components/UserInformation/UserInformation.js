@@ -45,15 +45,18 @@ const formFields = [
 ];
 function UserInformation() {
   const [error, setError] = useState(false)
-  if(error){
-    swal("Вы ввели больше символов!");
-    setError(false)
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if(error){
+      swal("Проверьте веденные данные")
+    }
   }
   return (
     <OrderContext.Consumer>
       {(context) => (
         <>
           <h1>1 шаг из 3</h1>
+          <form onSubmit={onSubmit}>
           {formFields.map(({ name, fieldName, errorLength}) => (
             <>
               <h3 className={user.text}>{name}</h3>
@@ -68,7 +71,9 @@ function UserInformation() {
                         fieldName,
                         USER_INFORMATION
                     )
+                    setError(false)
                   } else {
+                    swal("Вы ввели больше символов!");
                     setError(true)
                   }
                 }
@@ -76,6 +81,7 @@ function UserInformation() {
               />
             </>
           ))}
+          </form>
         </>
       )}
     </OrderContext.Consumer>

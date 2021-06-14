@@ -1,7 +1,7 @@
 import React from "react";
 import cart from "./Cart.module.css";
-import CartComponent from "Container/CartComponent";
-import { SumContext } from "СontextAs/SumContext";
+import CartComponent from "../CartComponent";
+import { SumContext } from "../../Context/SumContext";
 import { Link } from "react-router-dom";
 function Cart() {
   const sumHandler = (mass) => {

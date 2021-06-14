@@ -5,7 +5,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import { OrderContext } from "СontextAs/OrderContext";
+import { OrderContext } from "../../Context/OrderContext";
 const YOUR_GOOGLE_API_KEY_GOES_HERE = "AIzaSyAqYigWRaOXPk4ukKlbZXDDp_yJzim6-Tk";
 const mapContainerStyle = {
   width: "280px",

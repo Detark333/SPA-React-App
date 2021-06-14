@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import swal from '@sweetalert/with-react'
-import { OrderContext } from "СontextAs/OrderContext";
+import { OrderContext } from "../../Context/OrderContext";
 import {
   USER_INFORMATION,
   SECOND_NAME,
@@ -9,7 +9,7 @@ import {
   SERIES_PASSPORT,
   NUMBER_PASSPORT,
   DATE_EXTRADITION,
-} from "@/Constants";
+} from "../../Constants";
 import user from "./UserInformation.module.css";
 const formFields = [
   {

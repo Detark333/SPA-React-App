@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import bank from "./BankCard.module.css";
-import { OrderContext } from "СontextAs/OrderContext";
+import { OrderContext } from "../../Context/OrderContext";
 import {
   CARD_NAME,
   CARD_NUMBER,
@@ -8,7 +8,7 @@ import {
   CARD_DAY,
   CARD_CVV,
   CARD,
-} from "@/Constants";
+} from "../../Constants";
 function BankCard() {
   const context = useContext(OrderContext);
   const {

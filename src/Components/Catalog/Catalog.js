@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import catalog from "./Catalog.module.css";
-import Product from "Container/Product";
-import { Context } from "СontextAs/Context";
+import Product from "../Product";
+import { Context } from "../../Context/Context";
 
 const FIRST_SORT_MASSIVE = "возрастанию цены";
 const SECOND_SORT_MASSIVE = "убываню цены";

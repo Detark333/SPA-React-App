@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import product from "./Product.module.css";
-import { SumContext } from "СontextAs/SumContext";
+import { SumContext } from "../../Context/SumContext";
 function Product(props) {
   const [checked, setChecked] = useState(0);
   const {

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import order from "./Order.module.css";
-import BankCard from "Container/BankCard";
-import UserInformation from "Container/UserInformation";
-import Map from "Container/Map";
-import CompleteOrder from "Container/CompleteOrder";
-import arrow from "SvgPicture/arrow.svg";
+import BankCard from "../BankCard";
+import UserInformation from "../UserInformation";
+import Map from "../Map";
+import CompleteOrder from "../CompleteOrder";
+import arrow from "../../Svg/arrow.svg";
 import swal from '@sweetalert/with-react'
 const components = [
   {

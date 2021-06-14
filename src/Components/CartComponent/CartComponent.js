@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cartComponent from "./CartComponent.module.css";
-import cart from "SvgPicture/cart.svg";
+import cart from "../../Svg/cart.svg";
 
 function CartComponent(props) {
   const {

@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Cart from "Container/Cart";
-import Order from "Container/Order";
-import Catalog from "Container/Catalog";
-import { Context } from "СontextAs/Context";
-import { SumContext } from "СontextAs/SumContext";
-import { OrderContext } from "СontextAs/OrderContext";
-import { SECTIONS } from "@/Constants";
+import Cart from "../Cart";
+import Order from "../Order";
+import Catalog from "../Catalog";
+import { Context } from "../../Context/Context";
+import { SumContext } from "../../Context/SumContext";
+import { OrderContext } from "../../Context/OrderContext";
+import { SECTIONS } from "../../Constants";
 
 class Main extends React.Component {
   state = {
